@@ -2,37 +2,9 @@
 // PepeSoldier is created by PepeSoldier 2023
 
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
 
-interface IERC20 {
-
-    function totalSupply() external view returns (uint256);
-
-    function balanceOf(address account) external view returns (uint256);
-
-    function transfer(address recipient, uint256 amount) external returns (bool);
-
-    function allowance(address owner, address spender) external view returns (uint256);
-
-    function approve(address spender, uint256 amount) external returns (bool);
-
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint256 amount
-    ) external returns (bool);
-
-
-    event Transfer(address indexed from, address indexed to, uint256 value);
-
-
-    event Approval(address indexed owner, address indexed spender, uint256 value);
-}
-
-
-
-pragma solidity ^0.8.0;
 
 
 abstract contract Context {
@@ -47,10 +19,7 @@ abstract contract Context {
 
 
 
-
-
-pragma solidity ^0.8.0;
-
+pragma solidity ^0.8.4;
 
 abstract contract Ownable is Context {
     address private _owner;
@@ -89,8 +58,7 @@ abstract contract Ownable is Context {
 
 
 
-
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
 
 library SafeMath {
@@ -193,6 +161,38 @@ library SafeMath {
 
 
 
+pragma solidity ^0.8.4;
+
+interface IERC20 {
+
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address account) external view returns (uint256);
+
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    function transferFrom(
+        address sender,
+        address recipient,
+        uint256 amount
+    ) external returns (bool);
+
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+}
+
+
+
+
+
+
 pragma solidity =0.8.4;
 
 enum TokenType {
@@ -216,9 +216,7 @@ abstract contract BaseToken {
 }
 
 
-
-
-pragma solidity =0.8.4;
+pragma solidity ^0.8.4;
 
 
 contract PepeSoldier is IERC20, Ownable, BaseToken {
@@ -423,5 +421,4 @@ contract PepeSoldier is IERC20, Ownable, BaseToken {
         uint256 amount
     ) internal virtual {}
 }
-
 
